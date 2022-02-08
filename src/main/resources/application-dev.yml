@@ -1,0 +1,27 @@
+server:
+  port: 8818
+
+  ## Redis 配置
+spring:
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 1200
+  datasource:
+    username: root
+    password: colin123.
+    url: jdbc:mysql://localhost:3306/colinappdb?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.colinapp.winter.entity
+logging:
+  level: debug

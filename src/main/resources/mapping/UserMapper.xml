@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.colinapp.winter.mapper.UserMapper">
+    <resultMap id="UserMap" type="com.colinapp.winter.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="userName" jdbcType="VARCHAR" property="userName"/>
+        <result column="userPwd" jdbcType="VARCHAR" property="userPwd"/>
+    </resultMap>
+
+    <select id="getUser" resultType="com.colinapp.winter.entity.User">
+        select * from user where  id=#{id}
+    </select>
+
+    <insert id="saveUser" parameterType="com.colinapp.winter.entity.User">
+        insert  into user values (#{id},#{userName},#{userPwd})
+    </insert>
+
+    <update id="updateUser" parameterType="com.colinapp.winter.entity.User">
+        update user set userName = #{userName}, userPwd = #{userPwd}
+        where  id = #{id}
+    </update>
+
+    <delete id="deleteUserById" parameterType="int">
+        delete user where id = #{id}
+    </delete>
+
+    <select id="getAllUser" resultType="com.colinapp.winter.entity.User">
+        select * from user
+    </select>
+
+
+</mapper>
