@@ -22,6 +22,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.colinapp.winter.entity
+  type-aliases-package: com.colinapp.winter
 logging:
   level: debug
