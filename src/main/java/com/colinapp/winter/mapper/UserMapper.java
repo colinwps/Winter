@@ -2,12 +2,12 @@ package com.colinapp.winter.mapper;
 
 import com.colinapp.winter.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
-@Repository
 public interface UserMapper {
     /**
      * 根据id查询用户信息
